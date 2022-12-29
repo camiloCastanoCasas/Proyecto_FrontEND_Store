@@ -1,0 +1,248 @@
+/****** CUSTOM PROPERTIES ******/
+:root{
+    --primario: #9C27B0;
+    --primarioOscuro: #891190;
+    --secundario: #FFCE00;
+    --secundarioOscuro: rgb(233,287,2);
+    --blanco: #FFF;
+    --negro: #000;
+
+    --fuentePrincipal: 'PT Sans Narrow', sans-serif;
+}
+
+/* Inicio. Codigo para que no se modifiquen el width y el heigth de una caja.*/
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* Para trabajar con los rem. 1 rem = 10px*/
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+/* Fin. Codigo para que no se modifiquen el width y el heigth de una caja.*/
+
+
+/***** GLOBALS ******/
+body{
+    background-color: var(--primario); /* Fondo del proyecto*/
+    font-size: 1.6rem; /* Tamaño de la fuente 16px = 1.6rem*/
+    line-height: 1.5; /* Interlineado*/
+}
+p{
+    font-size: 1.8rem; /* Tamaño de la fuente 18px = 1.8rem*/
+    font-family: Arial, Helvetica, sans-serif; /* Tipo de fuente*/
+    color: var(--blanco); /* Color de la letra */
+}
+a{
+    text-decoration: none; /* Quitar los subrayados de los enlaces.*/
+}
+img{
+    width: 100%; /* Tamaño de la imagen, va a tener 100%*/
+}
+.contenedor{
+    max-width: 120rem; /* Tamaño del contenedor, Como maximo va a tener 120rem = 1200px.*/
+    margin: 0 auto; /*Poner el contenedor centrado.*/
+}
+h1,h2,h3{
+    text-align: center; /* Alineacion del texto al centro*/
+    color: var(--secundario); /* Color de la letra */
+    font-family: var(--fuentePrincipal); /* Tipo de fuente*/
+    font-weight: 700; /* Utilizando una letra mas gruesa */
+    text-transform: uppercase; /* Poner texto en mayuscula sostenida*/
+}
+h1{
+    font-size: 3rem; /* Tamaño de la fuente 30px = 3rem*/
+}
+h2{
+    font-size: 2.5rem; /* Tamaño de la fuente 20px = 2rem*/
+}
+h3{
+    font-size: 2rem; /* Tamaño de la fuente 12px = 1.2rem*/
+}
+
+/****** FIN VARIABLES GLOBALES. *****/
+
+/* UTILIDADES */
+.upperCase{
+    text-transform: uppercase; /* Poner texto en mayuscula sostenida*/
+}
+
+/***** HEADER ******/
+.header{
+    display: flex; /* Disponemos de flex para poder tener control sobre el header */
+    justify-content: center; /* En este caso, centramos el contenido de header -> Para este proyecto se centra la imagen.*/
+}
+.header__logo{
+    margin: 3rem 0; /* Se aplica un margen arriba y abajo de 3rem = 30 px. Y para los lados 0.*/
+}
+
+/****** FOOTER ******/
+.footer{
+    background-color: var(--primarioOscuro); /* Se le aplica un fondo al footer.*/
+    padding: 1rem 0; /* Se aplica un padding arriba y abajo de 1rem = 10 px. Y para los lados 0.*/
+    margin-top: 2rem; /* Se aplica un margen arriba 2rem.*/
+}
+.footer__texto{
+    text-align: center; /* Alineacion del texto al centro.*/
+    font-family: var(--fuentePrincipal); /* Tipo de fuente */
+    font-weight: 700; /* Utilizando una letra mas gruesa */
+    font-size: 1.8rem;/* Tamaño de la fuente.*/
+}
+
+/********* NAVEGACION **********/
+.navegacion{
+    background-color: var(--primarioOscuro); /* Se le aplica un fondo a la barra de navegacion.*/
+    padding: 1rem 0; /* Se aplica un padding arriba y abajo de 1rem = 10 px. Y para los lados 0.*/
+    display: flex; /* Disponemos de flex para poder tener control*/
+    justify-content: center; /* En este caso, centramos el contenido de la barra de navegacion. Se centran los enlaces.*/
+    gap: 2rem; /*Separa los elementos dentro de la navegacion un espacio de 2rem entre cada elemento. (Forma nueva) */
+}
+.navegacion__enlace{
+    font-family: var(--fuentePrincipal); /* Tipo de fuente */
+    font-size: 2rem; /* Tamaño de la fuente 25px = 2.5rem */
+    color: var(--blanco); /* Color de la letra */
+    font-weight: 700; /* Utilizando una letra mas gruesa */
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{
+    color: var(--secundario); /* Color de la letra : En hover al pasar por encima del enlace. En --activo es para indicar que pagina se encuentra aciva*/
+}
+
+/***** GRID *****/
+.grid{
+    display: grid; /*Se habilita el display grid*/
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de 1fr (Dispositivos moviles)*/
+    gap: 2rem; /*Separacion entre filas y columnas 2rem para cada fila y cada columna*/
+}
+
+@media (min-width: 768px) {
+    .grid{
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas de 1fr (Dispositivos > 768px)*/
+    }
+    
+}
+/**** PRODUCTOS ****/
+.producto{
+    background-color: var(--primarioOscuro); /* Color de fondo para donde estan todos los productos*/
+    padding: 1rem; /* Se le agrega un paddin de 1rem */
+}
+.producto__nombre{
+    font-size: 3rem; /*Tamaño de fuente*/
+}
+.producto__precio{
+    font-size: 2rem; /*Tamaño de fuente*/
+    color: var(--secundario); /*Color de fuente*/
+}
+.producto__nombre,
+.producto__precio{
+    font-family: var(--fuentePrincipal); /*Tipo de fuente*/
+    font-weight: 700; /* Hacer la fuente mas gruesa*/
+    margin: 1rem 0; /* Margen entre el nombre y el precio*/
+    text-align: center; /* Alineacion de el nombre y precio al centro*/
+    line-height: 1.2; /* Interlineado de 1.2*/
+}
+
+/**** GRAFICO ****/
+.grafico{
+    min-height: 30rem; /*la altura del contenedor donde se encuentran las imagenes va a tener 30rem como minimo de altura, menos de eso no podra tener */
+    background-repeat: no-repeat;
+    background-size: cover; /*La imagen llena se acopla al espacio que sobra*/
+    grid-column: 1/3; /*Posicion del elemento en la grid*/
+}
+.grafico--camisas{
+    /*Posicion del elemento en la grid*/
+    grid-row: 2/3; 
+    background-image: url(../img/grafico1.jpg);
+}
+.grafico--node{
+    background-image: url(../img/grafico2.jpg);
+    grid-row:8/9;
+}
+
+@media (min-width: 768px) {
+    /*Posicion del elemento en la grid*/
+    .grafico--node{
+        grid-row: 5/6;
+        grid-column: 2/4;
+    }  
+}
+
+/**** Nosotros ****/
+.nosotros{
+    display: grid; 
+    grid-template-rows: repeat(2, auto); /* Para que cuando este en dispositivo movil no haya un espacio entre la imagen y el texto -> auto */
+}
+@media (min-width: 768px) {
+    .nosotros{
+        grid-template-columns: repeat(2, 1fr); /* Creacion de dos columnas, para pc*/
+        column-gap: 2rem; /*Separacion entre columnas*/
+    }
+}
+.nosotros__imagen{
+    grid-row: 1/2; /*Posicion del elemento en la grid para movil*/
+}
+@media (min-width: 768px) {
+    .nosotros__imagen{
+        grid-column: 2/3; /*Posicion del elemento en la grid para PC*/
+    }
+    
+}
+
+/***** BLOQUES *****/
+.bloques{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .bloques{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.bloque{
+    text-align: center;
+}
+.bloque__titulo{
+    margin: 0;
+}
+
+/****** PAGINA DEL PRODUCTO ****/
+@media (min-width: 768px) {
+    .camisa{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 2rem;
+    }
+}
+
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+.formulario__campo{
+    border: 1rem solid var(--primarioOscuro);
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+}
+.campo__option{
+    background-color: var(--primarioOscuro);
+}
+.formulario__submit{
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background-color .3s ease;
+    grid-column: 1 / 3;
+}
+.formulario__submit:hover{
+    background-color: var(--secundarioOscuro);
+}
