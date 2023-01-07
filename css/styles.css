@@ -206,6 +206,9 @@ h3{
     margin: 0;
 }
 
+.camisa {
+    padding: 2rem;
+}
 /****** PAGINA DEL PRODUCTO ****/
 @media (min-width: 768px) {
     .camisa{
@@ -228,6 +231,7 @@ h3{
     font-family: Arial, Helvetica, sans-serif;
     padding: 1rem;
     appearance: none;
+    width: 100%;
 }
 .campo__option{
     background-color: var(--primarioOscuro);
